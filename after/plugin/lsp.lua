@@ -35,7 +35,7 @@ lsp.set_preferences({
 	},
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set("n", "gd", function()
@@ -77,6 +77,7 @@ lsp.format_on_save({
 	},
 	servers = {
 		["null-ls"] = { "javascript", "typescript", "lua", "typescriptreact" },
+		["rust_analyzer"] = { "rust" },
 	},
 })
 
